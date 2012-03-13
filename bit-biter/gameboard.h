@@ -1,3 +1,12 @@
+//--------------------------------------------------------------
+// Program: Bit Biter
+// Course: Computer Science II (Cps 111)
+// Name: Nathaniel Palmer (NPALM479)
+// Date: 3/12/12
+// Description: Encapsulates game logic. Uses QTimer to continuously
+// update state.
+//--------------------------------------------------------------
+
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
 

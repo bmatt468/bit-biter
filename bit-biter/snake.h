@@ -1,3 +1,12 @@
+//--------------------------------------------------------------
+// Program: Bit Biter
+// Course: Computer Science II (Cps 111)
+// Name: Nathaniel Palmer (NPALM479)
+// Date: 3/12/12
+// Description: Represents a player's snake on the game board.
+// Handles the logic of snake movement and death detection.S
+//--------------------------------------------------------------
+
 #ifndef SNAKE_H
 #define SNAKE_H
 
