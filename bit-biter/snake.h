@@ -19,6 +19,18 @@ class Snake : public QObject
     Q_OBJECT
 public:
     explicit Snake(QObject *parent = 0);
+
+	//--------------------------------------------------------------
+	// QList<QPoint> *getBodySegments()
+	// Purpose: retrieves a list of points describing the locations
+	// of all the snake's body segments
+	// Limitations: none
+	// Assumptions: none
+	// Return: A QList containing QPoints representing the locations
+	// of all the snake's body segments in terms of the gameboard's
+	// coordinate system. The snake's head segment location ssis at index 0.
+	//--------------------------------------------------------------
+
     QList<QPoint> *getBodySegments();
 
 private:
