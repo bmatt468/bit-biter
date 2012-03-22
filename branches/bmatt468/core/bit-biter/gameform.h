@@ -2,6 +2,7 @@
 #define GAMEFORM_H
 
 #include <QWidget>
+#include <QTimer>
 
 namespace Ui {
     class GameForm;
@@ -18,6 +19,7 @@ public:
 private:
     Ui::GameForm *ui;
     void closeEvent(QCloseEvent *);
+    int inter;
 
 signals:
     void closed();

@@ -6,7 +6,12 @@ GameForm::GameForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GameForm)
 {
+    inter = 1000;
     ui->setupUi(this);
+    QTimer *t = new QTimer(this);
+    t->setInterval(inter);
+    //connect(t, SIGNAL(timeout()), this,) *need to get slot to get snake*
+    t->start();
 }
 
 GameForm::~GameForm()
