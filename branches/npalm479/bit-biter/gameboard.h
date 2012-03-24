@@ -22,6 +22,26 @@ public:
 	explicit GameBoard(QObject *parent = 0);
 
 	//--------------------------------------------------------------
+	// int getHeight()
+	// Purpose: retrieves the height of the gameboard grid
+	// Limitations: none
+	// Assumptions: none
+	// Return: an integer representing the height of the gameboard grid
+	//--------------------------------------------------------------
+
+	int getHeight();
+
+	//--------------------------------------------------------------
+	// int getWidth()
+	// Purpose: retrieves the width of the gameboard grid
+	// Limitations: none
+	// Assumptions: none
+	// Return: an integer representing the width of the gameboard grid
+	//--------------------------------------------------------------
+
+	int getWidth();
+
+	//--------------------------------------------------------------
 	// int getScore()
 	// Purpose: retrieves the player's current score as determined
 	// by how much food his snake has eaten
@@ -105,6 +125,7 @@ public slots:
 private:
     QTimer *timer;
     int score;
+	int width, height;
     QList<QPoint> *food;
     Snake *snake;
 
