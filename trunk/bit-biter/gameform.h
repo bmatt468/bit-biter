@@ -1,3 +1,12 @@
+//--------------------------------------------------------------
+// Program: Bit Biter
+// Course: Computer Science II (Cps 111)
+// Name: Nathaniel Palmer (NPALM479)
+// Date: 3/12/12
+// Description: Presents game state to user and handles user input
+// including game controls.
+//--------------------------------------------------------------
+
 #ifndef GAMEFORM_H
 #define GAMEFORM_H
 
