@@ -12,6 +12,13 @@
 
 #include <QWidget>
 #include <QTimer>
+#include "gameform.h"
+#include "mainwindow.h"
+#include "ui_gameform.h"
+#include "gameboard.h"
+#include "snake.h"
+#include <QLabel>
+
 
 namespace Ui {
     class GameForm;
@@ -24,11 +31,17 @@ class GameForm : public QWidget
 public:
     explicit GameForm(QWidget *parent = 0);
     ~GameForm();
+    GameBoard *g;
+    Snake *s;
+
 
 private:
     Ui::GameForm *ui;
     void closeEvent(QCloseEvent *);
+    void focusOutEvent(QFocusEvent *);
+    void focusInEvent(QFocusEvent *);
     int inter;
+    QLabel *l;
 
 signals:
     void closed();
