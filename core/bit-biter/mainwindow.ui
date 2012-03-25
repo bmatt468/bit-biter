@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Bit-Biter (beta)</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -85,17 +88,17 @@ QPushButton:pressed {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>10</y>
-      <width>401</width>
-      <height>91</height>
+      <x>20</x>
+      <y>30</y>
+      <width>361</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 46pt &quot;LLPixel&quot;;</string>
+     <string notr="true">border-image: url(:/fonts/fonts/bit-biter.png);</string>
     </property>
     <property name="text">
-     <string>Bit Biter</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
