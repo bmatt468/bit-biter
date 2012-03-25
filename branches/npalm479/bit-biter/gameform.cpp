@@ -49,8 +49,9 @@ void GameForm::refreshBoard()
 }
 
 void GameForm::focusOutEvent(QFocusEvent *)
-{
-    l->setText("PAUSED");
+{    
+    l->setStyleSheet("border-image: url(:/fonts/fonts/paused.png);");
+    l->setGeometry(10,10,500,75);
     l->show();
 }
 
