@@ -1,8 +1,8 @@
 //--------------------------------------------------------------
 // Program: Bit Biter
 // Course: Computer Science II (Cps 111)
-// Name: Nathaniel Palmer (NPALM479)
-// Date: 3/12/12
+// Name: Benjamin Matthews (bmatt468)
+// Date: 3/22/12
 // Description: Presents game state to user and handles user input
 // including game controls.
 //--------------------------------------------------------------
@@ -11,6 +11,14 @@
 #define GAMEFORM_H
 
 #include <QWidget>
+#include <QTimer>
+#include "gameform.h"
+#include "mainwindow.h"
+#include "ui_gameform.h"
+#include "gameboard.h"
+#include "snake.h"
+#include <QLabel>
+
 
 namespace Ui {
     class GameForm;
@@ -23,15 +31,23 @@ class GameForm : public QWidget
 public:
     explicit GameForm(QWidget *parent = 0);
     ~GameForm();
+    GameBoard *g;
+    Snake *s;
+
 
 private:
     Ui::GameForm *ui;
     void closeEvent(QCloseEvent *);
+    void focusOutEvent(QFocusEvent *);
+    void focusInEvent(QFocusEvent *);
+    int inter;
+    QLabel *l;
 
 signals:
     void closed();
 
 private slots:
+    void refreshBoard();
 
 };
 
