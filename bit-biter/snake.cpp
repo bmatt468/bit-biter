@@ -53,6 +53,7 @@ void Snake::changeDirection(Snake::Direction newDir){
 }
 
 void Snake::move(){
+	// calculate next position
 	QPoint transformPoint;
 	switch (direction){
 	case UP:
@@ -93,6 +94,8 @@ void Snake::move(){
 
 	bodySegments->push_front(newHead);
 	bodySegments->removeLast();
+
+	handleCollision();
 }
 
 void Snake::eatFood(){
@@ -120,3 +123,11 @@ void Snake::eatFood(){
 	board->foodWasEaten();
 }
 
+void Snake::handleCollision(){
+	QPoint headSegment = bodySegments->value(0);
+	for (int i = 1; i < bodySegments->length(); i++){
+		if (headSegment == bodySegments->value(i)){
+			isDead = true;
+		}
+	}
+}
