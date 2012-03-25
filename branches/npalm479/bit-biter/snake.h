@@ -102,6 +102,18 @@ private:
 
 	void eatFood();
 
+	//--------------------------------------------------------------
+	// void handleCollision()
+	// Purpose: checks for fatal collision and sets snake's isDead
+	// flag accordingly
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void handleCollision();
+
+
 signals:
 
 public slots:

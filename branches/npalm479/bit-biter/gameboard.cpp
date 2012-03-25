@@ -36,8 +36,6 @@ void GameBoard::generateFood(){
 	int randX = rand() % (width + 1);
 	int randY = rand() % (height + 1);
 	food = QPoint(randX, randY);
-
-	// TODO: Add intelligent placement of food away from snake.
 }
 
 int GameBoard::getHeight(){
@@ -81,5 +79,9 @@ void GameBoard::foodWasEaten(){
 
 void GameBoard::tick(){
 	snake->move();
+	if (snake->checkIsDead()){
+		isGameOver = true;
+		timer->stop();
+	}
 	emit needsUpdate();
 }
