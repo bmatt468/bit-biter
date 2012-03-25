@@ -33,8 +33,8 @@ GameBoard::~GameBoard(){
 
 void GameBoard::generateFood(){
 	srand(time(NULL));
-	int randX = rand() % (width + 1);
-	int randY = rand() % (height + 1);
+	int randX = rand() % width;
+	int randY = rand() % height;
 	food = QPoint(randX, randY);
 }
 
