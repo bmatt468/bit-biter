@@ -4,7 +4,7 @@
 
 #define INIT_SNAKE_LENGTH 5
 #define INIT_BOARD_SIZE 30
-#define TIMER_INTERVAL 500
+#define TIMER_INTERVAL 100
 
 GameBoard::GameBoard(QObject *parent) :
 	QObject(parent),
@@ -72,6 +72,11 @@ void GameBoard::pause(){
 
 bool GameBoard::checkIsGameOver(){
 	return isGameOver;
+}
+
+void GameBoard::foodWasEaten(){
+	generateFood();
+	score += 1;
 }
 
 void GameBoard::tick(){

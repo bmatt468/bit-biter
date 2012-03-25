@@ -87,7 +87,36 @@ void Snake::move(){
 		newHead.setY(board->getHeight() - 1);
 	}
 
+	if (newHead == board->getFood()){
+		eatFood();
+	}
+
 	bodySegments->push_front(newHead);
 	bodySegments->removeLast();
+}
+
+void Snake::eatFood(){
+	QPoint transformPoint;
+	switch (direction){
+	case UP:
+				transformPoint = QPoint(0,1);
+				break;
+	case DOWN:
+				transformPoint = QPoint(0,-1);
+				break;
+	case LEFT:
+				transformPoint = QPoint(1,0);
+				break;
+	case RIGHT:
+				transformPoint = QPoint(-1,0);
+				break;
+	default:
+		transformPoint = QPoint(0,0);
+	}
+
+	QPoint newSegment = bodySegments->last() + transformPoint;
+	bodySegments->push_back(newSegment);
+
+	board->foodWasEaten();
 }
 

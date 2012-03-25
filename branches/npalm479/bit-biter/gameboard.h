@@ -119,6 +119,17 @@ public:
 
     bool checkIsGameOver();
 
+	//--------------------------------------------------------------
+	// void foodWasEaten()
+	// Purpose: Indicates to the gameboard that the food was eaten.
+	// Generates a new piece of food and increments the score.
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void foodWasEaten();
+
 signals:
 
 	//--------------------------------------------------------------
