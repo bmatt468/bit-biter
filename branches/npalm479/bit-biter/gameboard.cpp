@@ -37,3 +37,23 @@ void GameBoard::generateFood(){
 
 	// TODO: Add intelligent placement of food away from snake.
 }
+
+int GameBoard::getHeight(){
+	return height;
+}
+
+int GameBoard::getWidth(){
+	return width;
+}
+
+int GameBoard::getScore(){
+	return score;
+}
+
+QPoint GameBoard::getFood(){
+	return food;
+}
+
+Snake *GameBoard::getSnake(){
+	return snake;
+}
