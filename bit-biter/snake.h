@@ -91,6 +91,17 @@ private:
 	Direction direction;
 	GameBoard *board;
 
+	//--------------------------------------------------------------
+	// void eatFood()
+	// Purpose: grows the snake by one segment and notifies the game
+	// board that the food was eaten
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void eatFood();
+
 signals:
 
 public slots:
