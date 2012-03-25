@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Mar 22 12:39:27 2012
+** Created: Sat Mar 24 23:22:29 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -111,7 +111,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Bit-Biter (beta)", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "Start Game", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("MainWindow", "Options", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Bit Biter", 0, QApplication::UnicodeUTF8));

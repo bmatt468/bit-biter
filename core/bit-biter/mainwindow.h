@@ -1,3 +1,13 @@
+//--------------------------------------------------------------
+// Program: Bit Biter
+// Course: Computer Science II (Cps 111)
+// Name: Benjamin Matthews (bmatt468)
+// Date: 3/22/12
+// Description: Presents interface for user to either start a new game
+// with a specified difficulty or load a previously saved game
+// from disk.
+//--------------------------------------------------------------
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

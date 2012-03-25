@@ -1,17 +1,21 @@
 #include "gameform.h"
 #include "mainwindow.h"
 #include "ui_gameform.h"
+#include "gameboard.h"
 
 GameForm::GameForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GameForm)
 {
-    inter = 1000;
+    GameBoard *g = new GameBoard();
+    connect(g, SIGNAL(needsUpdate()), this, SLOT(refreshBoard())); // update snake position
+
+    /*inter = 1000;
     ui->setupUi(this);
     QTimer *t = new QTimer(this);
     t->setInterval(inter);
     //connect(t, SIGNAL(timeout()), this,) *need to get slot to get snake*
-    t->start();
+    t->start();*/
 }
 
 GameForm::~GameForm()
