@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sat Mar 24 23:22:29 2012
+** Created: Sun Mar 25 18:21:31 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -41,6 +41,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(400, 300);
+        MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButton = new QPushButton(centralWidget);
@@ -89,8 +90,8 @@ public:
 "}"));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 10, 401, 91));
-        label->setStyleSheet(QString::fromUtf8("font: 46pt \"LLPixel\";"));
+        label->setGeometry(QRect(20, 30, 361, 61));
+        label->setStyleSheet(QString::fromUtf8("border-image: url(:/fonts/fonts/bit-biter.png);"));
         label->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -114,7 +115,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Bit-Biter (beta)", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "Start Game", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("MainWindow", "Options", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("MainWindow", "Bit Biter", 0, QApplication::UnicodeUTF8));
+        label->setText(QString());
     } // retranslateUi
 
 };
