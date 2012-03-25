@@ -89,7 +89,7 @@ public:
 	// void start()
 	// Purpose: starts gameplay if game is paused or has not yet
 	// started
-	// Limitations: none
+	// Limitations: has no effect if game is over
 	// Assumptions: none
 	// Return: nothing
 	//--------------------------------------------------------------
@@ -137,6 +137,7 @@ private:
 	int width, height;
 	QPoint food;
     Snake *snake;
+	bool isGameOver;
 
 	//--------------------------------------------------------------
 	// void generateFood()
