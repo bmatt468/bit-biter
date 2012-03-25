@@ -23,6 +23,3 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     gameform.ui
-
-RESOURCES += \
-    fonts.qrc
