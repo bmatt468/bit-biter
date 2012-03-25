@@ -19,7 +19,18 @@ class GameBoard : public QObject
 {
     Q_OBJECT
 public:
+	//--------------------------------------------------------------
+	// explicit GameBoard(QObject *parent = 0)
+	// Purpose: Constructs a new GameBoard object with dimensions of
+	// 50 x 50 tiles and a gameplay speed of one move every 1/2 second.
+	// Limitations: none
+	// Assumptions: none
+	// Return: a pointer to a new GameBoard object
+	//--------------------------------------------------------------
+
 	explicit GameBoard(QObject *parent = 0);
+
+	~GameBoard();
 
 	//--------------------------------------------------------------
 	// int getHeight()
@@ -53,16 +64,16 @@ public:
 	int getScore();
 
 	//--------------------------------------------------------------
-	// QList<QPoint> *getFood()
-	// Purpose: retrieves a list of points describing the locations
-	// of all the pieces of food on the game board.
+	// QPoint getFood()
+	// Purpose: retrieves a point describing the location
+	// of the next piece of food on the gameboard
 	// Limitations: none
 	// Assumptions: none
-	// Return: a QList containing QPoints representing the locations
-	// of food pieces in terms of the gameboard's coordinate system
+	// Return: a QPoint representing the location of the next piece
+	// of food in terms of the gameboard's coordinate system
 	//--------------------------------------------------------------
 
-    QList<QPoint> *getFood();
+	QPoint getFood();
 
 	//--------------------------------------------------------------
 	// Snake *getSnake()
@@ -120,15 +131,25 @@ signals:
 
     void needsUpdate();
 
-public slots:
-
 private:
     QTimer *timer;
     int score;
 	int width, height;
-    QList<QPoint> *food;
+	QPoint food;
     Snake *snake;
 
+	//--------------------------------------------------------------
+	// void generateFood()
+	// Purpose: Places a new piece of food on the gameboard at a
+	// random location.
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void generateFood();
+
+public slots:
 	//--------------------------------------------------------------
 	// void tick()
 	// Purpose: Updates game state.
@@ -137,7 +158,7 @@ private:
 	// Return: nothing
 	//--------------------------------------------------------------
 
-    void tick();
+	void tick();
 };
 
 #endif // GAMEBOARD_H

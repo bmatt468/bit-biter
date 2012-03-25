@@ -20,7 +20,7 @@ class Snake : public QObject
 public:
 	enum Direction {UP, DOWN, LEFT, RIGHT};
 
-    explicit Snake(QObject *parent = 0);
+	explicit Snake(QObject *parent = 0, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
 
 	//--------------------------------------------------------------
 	// QList<QPoint> *getBodySegments()
