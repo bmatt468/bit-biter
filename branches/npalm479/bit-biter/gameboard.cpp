@@ -15,6 +15,7 @@ GameBoard::GameBoard(QObject *parent) :
 {
 	timer = new QTimer();
 	timer->setInterval(TIMER_INTERVAL);
+	connect(timer, SIGNAL(timeout()), this, SLOT(tick()));
 
 	generateFood();
 
@@ -56,4 +57,12 @@ QPoint GameBoard::getFood(){
 
 Snake *GameBoard::getSnake(){
 	return snake;
+}
+
+void GameBoard::start(){
+	timer->start();
+}
+
+void GameBoard::tick(){
+	emit needsUpdate();
 }
