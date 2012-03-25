@@ -16,13 +16,17 @@ Snake::Snake(QObject *parent, QPoint headLoc, int length, Direction dir) :
 	QPoint transformPoint;
 	switch (dir){
 	case UP:
-		transformPoint = QPoint(0,-1);
+                transformPoint = QPoint(0,1);
+                break;
 	case DOWN:
-		transformPoint = QPoint(0,1);
+                transformPoint = QPoint(0,-1);
+                break;
 	case LEFT:
-		transformPoint = QPoint(-1,0);
+                transformPoint = QPoint(1,0);
+                break;
 	case RIGHT:
-		transformPoint = QPoint(1,0);
+                transformPoint = QPoint(-1,0);
+                break;
 	default:
 		transformPoint = QPoint(0,0);
 	}
@@ -52,12 +56,16 @@ void Snake::move(){
 	switch (direction){
 	case UP:
 		transformPoint = QPoint(0,-1);
+                break;
 	case DOWN:
 		transformPoint = QPoint(0,1);
+                break;
 	case LEFT:
 		transformPoint = QPoint(-1,0);
+                break;
 	case RIGHT:
 		transformPoint = QPoint(1,0);
+                break;
 	default:
 		transformPoint = QPoint(0,0);
 	}
