@@ -18,7 +18,7 @@ class Snake : public QObject
 {
     Q_OBJECT
 public:
-	enum Direction {UP, DOWN, LEFT, RIGHT};
+	enum Direction {UP, LEFT, DOWN, RIGHT};
 
 	explicit Snake(QObject *parent = 0, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
 
