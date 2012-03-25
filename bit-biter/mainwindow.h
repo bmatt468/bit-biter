@@ -12,6 +12,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QFontDatabase>
 
 namespace Ui {
     class MainWindow;
