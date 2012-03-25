@@ -47,3 +47,24 @@ void Snake::changeDirection(Snake::Direction newDir){
 	}
 }
 
+void Snake::move(){
+	QPoint transformPoint;
+	switch (direction){
+	case UP:
+		transformPoint = QPoint(0,-1);
+	case DOWN:
+		transformPoint = QPoint(0,1);
+	case LEFT:
+		transformPoint = QPoint(-1,0);
+	case RIGHT:
+		transformPoint = QPoint(1,0);
+	default:
+		transformPoint = QPoint(0,0);
+	}
+
+	QPoint newHead = bodySegments->first() + transformPoint;
+
+	bodySegments->push_front(newHead);
+	bodySegments->removeLast();
+}
+
