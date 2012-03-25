@@ -11,20 +11,94 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Bit-Biter (beta)</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>90</y>
-      <width>93</width>
-      <height>28</height>
+      <x>70</x>
+      <y>170</y>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {    
+    min-height: 1.5em;    
+    font: 1em;   
+    margin: 0 1px 0 1px;   
+    color: white;    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #000000, stop: 1 #CCCCCC);
+    
+    border-style: outset;    
+    border-radius: 10px;
+    border-width: 2px;   
+    border-color: #000000;
+}
+ 
+
+QPushButton:pressed {    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CCCCCC, stop: 1 #000000);
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Start Game</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>170</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {    
+    min-height: 1.5em;    
+    font: 1em;   
+    margin: 0 1px 0 1px;   
+    color: white;    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #000000, stop: 1 #cccccc);
+    
+    border-style: outset;    
+    border-radius: 10px;
+    border-width: 2px;   
+    border-color: #000000;
+}
+ 
+
+QPushButton:pressed {    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #cccccc, stop: 1 #000000);
+}</string>
+    </property>
+    <property name="text">
+     <string>Options</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>401</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 46pt &quot;LLPixel&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Bit Biter</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
