@@ -24,6 +24,11 @@ GameBoard::GameBoard(QObject *parent) :
 	snake = new Snake(this, QPoint(headX, headY), INIT_SNAKE_LENGTH, Snake::LEFT);
 }
 
+GameBoard::~GameBoard(){
+	delete timer;
+	delete snake;
+}
+
 void GameBoard::generateFood(){
 	srand(time(NULL));
 	int randX = rand() % (width + 1);

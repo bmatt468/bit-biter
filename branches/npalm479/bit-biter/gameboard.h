@@ -30,6 +30,8 @@ public:
 
 	explicit GameBoard(QObject *parent = 0);
 
+	~GameBoard();
+
 	//--------------------------------------------------------------
 	// int getHeight()
 	// Purpose: retrieves the height of the gameboard grid
@@ -147,6 +149,15 @@ private:
 	//--------------------------------------------------------------
 
     void tick();
+
+	//--------------------------------------------------------------
+	// void generateFood()
+	// Purpose: Places a new piece of food on the gameboard at a
+	// random location.
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
 
 	void generateFood();
 };
