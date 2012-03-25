@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'gameboard.h'
 **
-** Created: Sat Mar 24 21:34:11 2012
+** Created: Sat Mar 24 21:59:17 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_GameBoard[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,11 +33,14 @@ static const uint qt_meta_data_GameBoard[] = {
  // signals: signature, parameters, type, tag, flags
       11,   10,   10,   10, 0x05,
 
+ // slots: signature, parameters, type, tag, flags
+      25,   10,   10,   10, 0x0a,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_GameBoard[] = {
-    "GameBoard\0\0needsUpdate()\0"
+    "GameBoard\0\0needsUpdate()\0tick()\0"
 };
 
 const QMetaObject GameBoard::staticMetaObject = {
@@ -70,9 +73,10 @@ int GameBoard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: needsUpdate(); break;
+        case 1: tick(); break;
         default: ;
         }
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

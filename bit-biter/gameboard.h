@@ -131,24 +131,12 @@ signals:
 
     void needsUpdate();
 
-public slots:
-
 private:
     QTimer *timer;
     int score;
 	int width, height;
 	QPoint food;
     Snake *snake;
-
-	//--------------------------------------------------------------
-	// void tick()
-	// Purpose: Updates game state.
-	// Limitations: none
-	// Assumptions: should be called by internal timer at regular intervals
-	// Return: nothing
-	//--------------------------------------------------------------
-
-    void tick();
 
 	//--------------------------------------------------------------
 	// void generateFood()
@@ -160,6 +148,17 @@ private:
 	//--------------------------------------------------------------
 
 	void generateFood();
+
+public slots:
+	//--------------------------------------------------------------
+	// void tick()
+	// Purpose: Updates game state.
+	// Limitations: none
+	// Assumptions: should be called by internal timer at regular intervals
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void tick();
 };
 
 #endif // GAMEBOARD_H
