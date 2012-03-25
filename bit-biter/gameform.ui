@@ -23,7 +23,7 @@
    </font>
   </property>
   <property name="cursor">
-   <cursorShape>ArrowCursor</cursorShape>
+   <cursorShape>BlankCursor</cursorShape>
   </property>
   <property name="focusPolicy">
    <enum>Qt::ClickFocus</enum>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gameform.ui'
 **
-** Created: Sun Mar 25 13:50:28 2012
+** Created: Sun Mar 25 15:56:16 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -37,7 +37,7 @@ public:
         font.setFamily(QString::fromUtf8("LLPixel"));
         font.setPointSize(72);
         GameForm->setFont(font);
-        GameForm->setCursor(QCursor(Qt::ArrowCursor));
+        GameForm->setCursor(QCursor(Qt::BlankCursor));
         GameForm->setFocusPolicy(Qt::ClickFocus);
 
         retranslateUi(GameForm);
