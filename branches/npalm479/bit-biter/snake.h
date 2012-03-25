@@ -23,6 +23,20 @@ class Snake : public QObject
 public:
 	enum Direction {UP, LEFT, DOWN, RIGHT};
 
+	//--------------------------------------------------------------
+	// explicit Snake(GameBoard *board, QPoint headLoc = QPoint(0,0),
+	// int length = 1, Direction dir = LEFT)
+	// Purpose: Constructs a new instance of the Snake class. The snake's
+	// head is positioned at headLoc with the total number of body segments
+	// determined by length, the initial direction of travel determined
+	// by dir, and the gameboard in which the snake moves determined
+	// by board.
+	// Limitations: does not handle wrapping in cases where the snake's
+	// body extends beyond the gameboard boundaries
+	// Assumptions: none
+	// Return: a newly allocated instance of the Snake class
+	//--------------------------------------------------------------
+
 	explicit Snake(GameBoard *board, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
 
 	//--------------------------------------------------------------
