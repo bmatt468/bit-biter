@@ -1,3 +1,12 @@
+//--------------------------------------------------------------
+// Program: Bit Biter
+// Course: Computer Science II (Cps 111)
+// Name: Benjamin Matthews (bmatt468)
+// Date: 3/22/12
+// Description: Presents game state to user and handles user input
+// including game controls.
+//--------------------------------------------------------------
+
 #ifndef GAMEFORM_H
 #define GAMEFORM_H
 
@@ -25,6 +34,7 @@ signals:
     void closed();
 
 private slots:
+    void refreshBoard();
 
 };
 

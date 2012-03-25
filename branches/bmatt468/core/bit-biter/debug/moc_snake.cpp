@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'snake.h'
 **
-** Created: Mon Mar 12 21:21:09 2012
+** Created: Sat Mar 24 23:22:45 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.3)
 **
 ** WARNING! All changes made in this file will be lost!
