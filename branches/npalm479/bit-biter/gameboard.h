@@ -19,6 +19,15 @@ class GameBoard : public QObject
 {
     Q_OBJECT
 public:
+	//--------------------------------------------------------------
+	// explicit GameBoard(QObject *parent = 0)
+	// Purpose: Constructs a new GameBoard object with dimensions of
+	// 50 x 50 tiles and a gameplay speed of one move every 1/2 second.
+	// Limitations: none
+	// Assumptions: none
+	// Return: a pointer to a new GameBoard object
+	//--------------------------------------------------------------
+
 	explicit GameBoard(QObject *parent = 0);
 
 	//--------------------------------------------------------------
@@ -138,6 +147,8 @@ private:
 	//--------------------------------------------------------------
 
     void tick();
+
+	void generateFood();
 };
 
 #endif // GAMEBOARD_H
