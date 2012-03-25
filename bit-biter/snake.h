@@ -13,6 +13,9 @@
 #include <QObject>
 #include <QPoint>
 #include <QList>
+#include "gameboard.h"
+
+class GameBoard;
 
 class Snake : public QObject
 {
@@ -20,7 +23,7 @@ class Snake : public QObject
 public:
 	enum Direction {UP, LEFT, DOWN, RIGHT};
 
-	explicit Snake(QObject *parent = 0, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
+	explicit Snake(GameBoard *board, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
 
 	//--------------------------------------------------------------
 	// QList<QPoint> *getBodySegments()
@@ -72,7 +75,7 @@ private:
     QList<QPoint> *bodySegments;
     bool isDead;
 	Direction direction;
-
+	GameBoard *board;
 
 signals:
 

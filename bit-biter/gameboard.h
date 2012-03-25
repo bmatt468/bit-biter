@@ -15,6 +15,8 @@
 #include <QPoint>
 #include "snake.h"
 
+class Snake;
+
 class GameBoard : public QObject
 {
     Q_OBJECT

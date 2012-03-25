@@ -1,11 +1,12 @@
 #include "snake.h"
 #include <stdlib.h>
 
-Snake::Snake(QObject *parent, QPoint headLoc, int length, Direction dir) :
-	QObject(parent),
+Snake::Snake(GameBoard *board, QPoint headLoc, int length, Direction dir) :
+	QObject(NULL),
 	bodySegments(NULL),
 	isDead(false),
-	direction(dir)
+	direction(dir),
+	board(board)
 {
 	bodySegments = new QList<QPoint>();
 	bodySegments->push_back(headLoc);
@@ -71,6 +72,20 @@ void Snake::move(){
 	}
 
 	QPoint newHead = bodySegments->first() + transformPoint;
+
+	// handle wrapping
+	if (newHead.x() == board->getWidth()){
+		newHead.setX(0);
+	}
+	if (newHead.x() == -1){
+		newHead.setX(board->getWidth() - 1);
+	}
+	if (newHead.y() == board->getHeight()){
+		newHead.setY(0);
+	}
+	if (newHead.y() == -1){
+		newHead.setY(board->getHeight() - 1);
+	}
 
 	bodySegments->push_front(newHead);
 	bodySegments->removeLast();
