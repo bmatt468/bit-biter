@@ -3,7 +3,7 @@
 #include "time.h"
 
 #define INIT_SNAKE_LENGTH 5
-#define INIT_BOARD_SIZE 50
+#define INIT_BOARD_SIZE 30
 #define TIMER_INTERVAL 500
 
 GameBoard::GameBoard(QObject *parent) :
@@ -66,10 +66,15 @@ void GameBoard::start(){
 	}
 }
 
+void GameBoard::pause(){
+	timer->stop();
+}
+
 bool GameBoard::checkIsGameOver(){
 	return isGameOver;
 }
 
 void GameBoard::tick(){
+	snake->move();
 	emit needsUpdate();
 }
