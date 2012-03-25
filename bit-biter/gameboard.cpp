@@ -3,8 +3,8 @@
 #include "time.h"
 
 #define INIT_SNAKE_LENGTH 5
-#define INIT_BOARD_SIZE 30
-#define TIMER_INTERVAL 100
+#define INIT_BOARD_SIZE 20
+#define TIMER_INTERVAL 150
 
 GameBoard::GameBoard(QObject *parent) :
 	QObject(parent),
