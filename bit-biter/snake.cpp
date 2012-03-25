@@ -32,3 +32,7 @@ Snake::Snake(QObject *parent, QPoint headLoc, int length, Direction dir) :
 	}
 }
 
+QList<QPoint> *Snake::getBodySegments(){
+	return bodySegments;
+}
+
