@@ -8,11 +8,10 @@ GameBoard::GameBoard(QObject *parent) :
 	QObject(parent),
 	score(0),
 	width(INIT_BOARD_SIZE),
-	height(INIT_BOARD_SIZE),
-	food(NULL)
+	height(INIT_BOARD_SIZE)
 {
 	timer = new QTimer();
-	timer->setInterval(1000);
+	timer->setInterval(TIMER_INTERVAL);
 
 	generateFood();
 
