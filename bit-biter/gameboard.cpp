@@ -66,10 +66,15 @@ void GameBoard::start(){
 	}
 }
 
+void GameBoard::pause(){
+	timer->stop();
+}
+
 bool GameBoard::checkIsGameOver(){
 	return isGameOver;
 }
 
 void GameBoard::tick(){
+	snake->move();
 	emit needsUpdate();
 }

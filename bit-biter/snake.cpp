@@ -1,4 +1,5 @@
 #include "snake.h"
+#include <stdlib.h>
 
 Snake::Snake(QObject *parent, QPoint headLoc, int length, Direction dir) :
 	QObject(parent),
@@ -34,5 +35,36 @@ Snake::Snake(QObject *parent, QPoint headLoc, int length, Direction dir) :
 
 QList<QPoint> *Snake::getBodySegments(){
 	return bodySegments;
+}
+
+bool Snake::checkIsDead(){
+	return isDead;
+}
+
+void Snake::changeDirection(Snake::Direction newDir){
+	if (abs(newDir - direction) != 2){ // ensure newDir is not opposite of current direction
+		direction = newDir;
+	}
+}
+
+void Snake::move(){
+	QPoint transformPoint;
+	switch (direction){
+	case UP:
+		transformPoint = QPoint(0,-1);
+	case DOWN:
+		transformPoint = QPoint(0,1);
+	case LEFT:
+		transformPoint = QPoint(-1,0);
+	case RIGHT:
+		transformPoint = QPoint(1,0);
+	default:
+		transformPoint = QPoint(0,0);
+	}
+
+	QPoint newHead = bodySegments->first() + transformPoint;
+
+	bodySegments->push_front(newHead);
+	bodySegments->removeLast();
 }
 
