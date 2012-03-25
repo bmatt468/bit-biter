@@ -62,16 +62,16 @@ public:
 	int getScore();
 
 	//--------------------------------------------------------------
-	// QList<QPoint> *getFood()
-	// Purpose: retrieves a list of points describing the locations
-	// of all the pieces of food on the game board.
+	// QPoint getFood()
+	// Purpose: retrieves a point describing the location
+	// of the next piece of food on the gameboard
 	// Limitations: none
 	// Assumptions: none
-	// Return: a QList containing QPoints representing the locations
-	// of food pieces in terms of the gameboard's coordinate system
+	// Return: a QPoint representing the location of the next piece
+	// of food in terms of the gameboard's coordinate system
 	//--------------------------------------------------------------
 
-    QList<QPoint> *getFood();
+	QPoint getFood();
 
 	//--------------------------------------------------------------
 	// Snake *getSnake()
@@ -135,7 +135,7 @@ private:
     QTimer *timer;
     int score;
 	int width, height;
-    QList<QPoint> *food;
+	QPoint food;
     Snake *snake;
 
 	//--------------------------------------------------------------
