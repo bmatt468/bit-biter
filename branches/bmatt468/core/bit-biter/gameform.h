@@ -17,7 +17,9 @@
 #include "ui_gameform.h"
 #include "gameboard.h"
 #include "snake.h"
+#include <QPushButton>
 #include <QLabel>
+#include <QKeyEvent>
 
 
 namespace Ui {
@@ -33,7 +35,8 @@ public:
     ~GameForm();
     GameBoard *g;
     Snake *s;
-
+    QList<QPoint> *snakesegs;
+    void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::GameForm *ui;
