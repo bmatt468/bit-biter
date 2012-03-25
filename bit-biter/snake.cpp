@@ -1,11 +1,12 @@
 #include "snake.h"
 #include <stdlib.h>
 
-Snake::Snake(QObject *parent, QPoint headLoc, int length, Direction dir) :
-	QObject(parent),
+Snake::Snake(GameBoard *board, QPoint headLoc, int length, Direction dir) :
+	QObject(NULL),
 	bodySegments(NULL),
 	isDead(false),
-	direction(dir)
+	direction(dir),
+	board(board)
 {
 	bodySegments = new QList<QPoint>();
 	bodySegments->push_back(headLoc);
@@ -52,6 +53,7 @@ void Snake::changeDirection(Snake::Direction newDir){
 }
 
 void Snake::move(){
+	// calculate next position
 	QPoint transformPoint;
 	switch (direction){
 	case UP:
@@ -72,7 +74,60 @@ void Snake::move(){
 
 	QPoint newHead = bodySegments->first() + transformPoint;
 
+	// handle wrapping
+	if (newHead.x() == board->getWidth()){
+		newHead.setX(0);
+	}
+	if (newHead.x() == -1){
+		newHead.setX(board->getWidth() - 1);
+	}
+	if (newHead.y() == board->getHeight()){
+		newHead.setY(0);
+	}
+	if (newHead.y() == -1){
+		newHead.setY(board->getHeight() - 1);
+	}
+
+	if (newHead == board->getFood()){
+		eatFood();
+	}
+
 	bodySegments->push_front(newHead);
 	bodySegments->removeLast();
+
+	handleCollision();
 }
 
+void Snake::eatFood(){
+	QPoint transformPoint;
+	switch (direction){
+	case UP:
+				transformPoint = QPoint(0,1);
+				break;
+	case DOWN:
+				transformPoint = QPoint(0,-1);
+				break;
+	case LEFT:
+				transformPoint = QPoint(1,0);
+				break;
+	case RIGHT:
+				transformPoint = QPoint(-1,0);
+				break;
+	default:
+		transformPoint = QPoint(0,0);
+	}
+
+	QPoint newSegment = bodySegments->last() + transformPoint;
+	bodySegments->push_back(newSegment);
+
+	board->foodWasEaten();
+}
+
+void Snake::handleCollision(){
+	QPoint headSegment = bodySegments->value(0);
+	for (int i = 1; i < bodySegments->length(); i++){
+		if (headSegment == bodySegments->value(i)){
+			isDead = true;
+		}
+	}
+}
