@@ -11,7 +11,8 @@ GameBoard::GameBoard(QObject *parent) :
 	score(0),
 	width(INIT_BOARD_SIZE),
 	height(INIT_BOARD_SIZE),
-	food(QPoint(0,0))
+	food(QPoint(0,0)),
+	isGameOver(false)
 {
 	timer = new QTimer();
 	timer->setInterval(TIMER_INTERVAL);
@@ -60,7 +61,13 @@ Snake *GameBoard::getSnake(){
 }
 
 void GameBoard::start(){
-	timer->start();
+	if (!isGameOver){
+		timer->start();
+	}
+}
+
+bool GameBoard::checkIsGameOver(){
+	return isGameOver;
 }
 
 void GameBoard::tick(){
