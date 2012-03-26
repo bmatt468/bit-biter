@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gameform.ui'
 **
-** Created: Sun Mar 25 15:56:16 2012
+** Created: Sun Mar 25 23:18:06 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -27,7 +27,7 @@ public:
     {
         if (GameForm->objectName().isEmpty())
             GameForm->setObjectName(QString::fromUtf8("GameForm"));
-        GameForm->resize(835, 654);
+        GameForm->resize(399, 362);
         QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -38,7 +38,7 @@ public:
         font.setPointSize(72);
         GameForm->setFont(font);
         GameForm->setCursor(QCursor(Qt::BlankCursor));
-        GameForm->setFocusPolicy(Qt::ClickFocus);
+        GameForm->setFocusPolicy(Qt::StrongFocus);
 
         retranslateUi(GameForm);
 
