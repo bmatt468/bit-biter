@@ -3,5 +3,6 @@
         <file>fonts/LLPIXEL_.TTF</file>
         <file>fonts/bit-biter.png</file>
         <file>fonts/paused.png</file>
+        <file>fonts/gameover.png</file>
     </qresource>
 </RCC>
