@@ -3,8 +3,8 @@
 #include "time.h"
 
 #define INIT_SNAKE_LENGTH 5
-#define INIT_BOARD_SIZE 30
-#define TIMER_INTERVAL 500
+#define INIT_BOARD_SIZE 20
+#define TIMER_INTERVAL 150
 
 GameBoard::GameBoard(QObject *parent) :
 	QObject(parent),
@@ -33,11 +33,9 @@ GameBoard::~GameBoard(){
 
 void GameBoard::generateFood(){
 	srand(time(NULL));
-	int randX = rand() % (width + 1);
-	int randY = rand() % (height + 1);
+	int randX = rand() % width;
+	int randY = rand() % height;
 	food = QPoint(randX, randY);
-
-	// TODO: Add intelligent placement of food away from snake.
 }
 
 int GameBoard::getHeight(){
@@ -74,7 +72,16 @@ bool GameBoard::checkIsGameOver(){
 	return isGameOver;
 }
 
+void GameBoard::foodWasEaten(){
+	generateFood();
+	score += 1;
+}
+
 void GameBoard::tick(){
 	snake->move();
+	if (snake->checkIsDead()){
+		isGameOver = true;
+		timer->stop();
+	}
 	emit needsUpdate();
 }
