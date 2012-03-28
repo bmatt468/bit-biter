@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gameform.ui'
 **
-** Created: Sun Mar 25 23:48:07 2012
+** Created: Wed Mar 28 12:31:17 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -33,6 +33,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(GameForm->sizePolicy().hasHeightForWidth());
         GameForm->setSizePolicy(sizePolicy);
+        GameForm->setMaximumSize(QSize(399, 400));
         QFont font;
         font.setFamily(QString::fromUtf8("LLPixel"));
         font.setPointSize(72);
