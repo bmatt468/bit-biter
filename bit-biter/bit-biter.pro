@@ -14,15 +14,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     gameform.cpp \
     gameboard.cpp \
-    snake.cpp
+    snake.cpp \
+    options.cpp
 
 HEADERS  += mainwindow.h \
     gameform.h \
     gameboard.h \
-    snake.h
+    snake.h \
+    options.h
 
 FORMS    += mainwindow.ui \
-    gameform.ui
+    gameform.ui \
+    options.ui
 
 RESOURCES += \
     fonts.qrc
