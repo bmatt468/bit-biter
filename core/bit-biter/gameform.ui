@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>399</width>
-    <height>362</height>
+    <height>455</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,12 +18,14 @@
   </property>
   <property name="font">
    <font>
-    <family>LLPixel</family>
-    <pointsize>72</pointsize>
+    <family>MS Shell Dlg 2</family>
+    <pointsize>8</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
    </font>
   </property>
   <property name="cursor">
-   <cursorShape>BlankCursor</cursorShape>
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="focusPolicy">
    <enum>Qt::StrongFocus</enum>
@@ -31,6 +33,67 @@
   <property name="windowTitle">
    <string>Bit-Biter</string>
   </property>
+  <widget class="QPushButton" name="game_reset">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>400</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {    
+    min-height: 1.5em;    
+    font: 1em;   
+    margin: 0 1px 0 1px;   
+    color: white;    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #000000, stop: 1 #CCCCCC);
+    
+    border-style: outset;    
+    border-radius: 10px;
+    border-width: 2px;   
+    border-color: #000000;
+}
+ 
+
+QPushButton:pressed {    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #CCCCCC, stop: 1 #000000);
+}</string>
+   </property>
+   <property name="text">
+    <string>Restart</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="time_left">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>400</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="score">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>400</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
