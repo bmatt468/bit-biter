@@ -39,6 +39,8 @@ public:
 
 	explicit Snake(GameBoard *board, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
 
+	~Snake();
+
 	//--------------------------------------------------------------
 	// QList<QPoint> *getBodySegments()
 	// Purpose: retrieves a list of points describing the locations
