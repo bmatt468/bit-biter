@@ -38,6 +38,10 @@ Snake::Snake(GameBoard *board, QPoint headLoc, int length, Direction dir) :
 	}
 }
 
+Snake::~Snake(){
+	delete bodySegments;
+}
+
 QList<QPoint> *Snake::getBodySegments(){
 	return bodySegments;
 }
