@@ -26,9 +26,41 @@ GameBoard::GameBoard(QObject *parent) :
 	snake = new Snake(this, QPoint(headX, headY), INIT_SNAKE_LENGTH, Snake::LEFT);
 }
 
+GameBoard::GameBoard(QObject *parent, QDataStream *saveData) :
+		QObject(parent)
+{
+	int interval;
+	*saveData >> interval;
+	timer = new QTimer();
+	timer->setInterval(interval);
+	connect(timer, SIGNAL(timeout()), this, SLOT(tick()));
+
+	*saveData >> score;
+	*saveData >> width;
+	*saveData >> height;
+	*saveData >> food;
+	*saveData >> isGameOver;
+	snake = new Snake(this, saveData);
+
+	// position snake in center of board
+	int headX = (width / 2) - (INIT_SNAKE_LENGTH / 2);
+	int headY = height / 2;
+	snake = new Snake(this, QPoint(headX, headY), INIT_SNAKE_LENGTH, Snake::LEFT);
+}
+
 GameBoard::~GameBoard(){
 	delete timer;
 	delete snake;
+}
+
+void GameBoard::SaveGame(QDataStream *saveData){
+	*saveData << timer->interval();
+	*saveData << score;
+	*saveData << width;
+	*saveData << height;
+	*saveData << food;
+	*saveData << isGameOver;
+	snake->save(saveData);
 }
 
 void GameBoard::generateFood(){
