@@ -13,6 +13,7 @@
 #include <QObject>
 #include <QTimer>
 #include <QPoint>
+#include <QDataStream>
 #include "snake.h"
 
 class Snake;
@@ -32,7 +33,29 @@ public:
 
 	explicit GameBoard(QObject *parent = 0);
 
+	//--------------------------------------------------------------
+	// GameBoard(QObject *parent = 0, QDataStream *saveData)
+	// Purpose: Constructs a gameboard from the data contained in the
+	// datastream saveData.
+	// Limitations: none
+	// Assumptions: the datastream saveData was created by the GameBoard.SaveGame()
+	// method
+	// Return: a pointer to a new GameBoard object
+	//--------------------------------------------------------------
+
+	GameBoard(QObject *parent, QDataStream *saveData);
+
 	~GameBoard();
+
+	//--------------------------------------------------------------
+	// void SaveGame(QDataStream *saveData)
+	// Purpose: saves the state of the gameboard to the datastream saveData
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void SaveGame(QDataStream *saveData);
 
 	//--------------------------------------------------------------
 	// int getHeight()
