@@ -17,10 +17,7 @@
 #include "ui_gameform.h"
 #include "gameboard.h"
 #include "snake.h"
-#include <QPushButton>
 #include <QLabel>
-#include <QKeyEvent>
-#include <string>
 
 
 namespace Ui {
@@ -32,12 +29,11 @@ class GameForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit GameForm(QWidget *parent = 0, QString snakeColor = "blue", QString foodColor = "green", QString deadColor = "red" );
+    explicit GameForm(QWidget *parent = 0);
     ~GameForm();
     GameBoard *g;
     Snake *s;
-    QList<QPoint> *snakesegs;
-    void keyPressEvent(QKeyEvent *event);
+
 
 private:
     Ui::GameForm *ui;
@@ -46,18 +42,11 @@ private:
     void focusInEvent(QFocusEvent *);
     int inter;
     QLabel *l;
-    QString bodyGrad;
-    QString foodGrad;
-    QString deadGrad;
-    void setBodyColor(QString color);
-    void setFoodColor(QString color);
-    void setDeadColor(QString color);
 
 signals:
     void closed();
 
 private slots:
-    void on_game_reset_clicked();
     void refreshBoard();
 
 };

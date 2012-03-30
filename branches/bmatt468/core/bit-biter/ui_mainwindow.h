@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun Mar 25 18:21:31 2012
+** Created: Thu Mar 29 10:29:56 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -32,6 +32,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLabel *label;
+    QPushButton *pushButton_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -40,13 +41,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(404, 301);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(70, 170, 101, 41));
+        pushButton->setGeometry(QRect(20, 170, 101, 41));
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton {    \n"
 "    min-height: 1.5em;    \n"
 "    font: 1em;   \n"
@@ -68,7 +69,7 @@ public:
 "}"));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(210, 170, 101, 41));
+        pushButton_2->setGeometry(QRect(150, 170, 101, 41));
         pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {    \n"
 "    min-height: 1.5em;    \n"
 "    font: 1em;   \n"
@@ -93,10 +94,32 @@ public:
         label->setGeometry(QRect(20, 30, 361, 61));
         label->setStyleSheet(QString::fromUtf8("border-image: url(:/fonts/fonts/bit-biter.png);"));
         label->setAlignment(Qt::AlignCenter);
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(280, 170, 101, 41));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {    \n"
+"    min-height: 1.5em;    \n"
+"    font: 1em;   \n"
+"    margin: 0 1px 0 1px;   \n"
+"    color: white;    \n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #000000, stop: 1 #cccccc);\n"
+"    \n"
+"    border-style: outset;    \n"
+"    border-radius: 10px;\n"
+"    border-width: 2px;   \n"
+"    border-color: #000000;\n"
+"}\n"
+" \n"
+"\n"
+"QPushButton:pressed {    \n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #cccccc, stop: 1 #000000);\n"
+"}"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 26));
+        menuBar->setGeometry(QRect(0, 0, 404, 26));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -116,6 +139,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Start Game", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("MainWindow", "Options", 0, QApplication::UnicodeUTF8));
         label->setText(QString());
+        pushButton_3->setText(QApplication::translate("MainWindow", "High Scores", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

@@ -34,34 +34,10 @@ public:
 	// Limitations: does not handle wrapping in cases where the snake's
 	// body extends beyond the gameboard boundaries
 	// Assumptions: none
-	// Return: a pointer to a new Snake object
+	// Return: a newly allocated instance of the Snake class
 	//--------------------------------------------------------------
 
 	explicit Snake(GameBoard *board, QPoint headLoc = QPoint(0,0), int length = 1, Direction dir = LEFT);
-
-	//--------------------------------------------------------------
-	// Snake(GameBoard *board, QDataStream *saveData)
-	// Purpose: Constructs a snake from the data contained in the
-	// datastream saveData.
-	// Limitations: none
-	// Assumptions: the datastream saveData was created by the Snake.Save()
-	// method
-	// Return: a pointer to a new Snake object
-	//--------------------------------------------------------------
-
-	Snake(GameBoard *board, QDataStream *saveData);
-
-	~Snake();
-
-	//--------------------------------------------------------------
-	// void save(QDataStream *saveData)
-	// Purpose: saves the state of the snake to the datastream saveData
-	// Limitations: none
-	// Assumptions: none
-	// Return: nothing
-	//--------------------------------------------------------------
-
-	void save(QDataStream *saveData);
 
 	//--------------------------------------------------------------
 	// QList<QPoint> *getBodySegments()
