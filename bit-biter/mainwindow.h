@@ -14,6 +14,7 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QFontDatabase>
+#include <options.h>
 
 namespace Ui {
     class MainWindow;
@@ -31,6 +32,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
+    void on_pushButton_2_clicked();
     void on_pushButton_clicked();
 
 };

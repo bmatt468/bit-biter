@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>404</width>
+    <height>301</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>20</x>
       <y>170</y>
       <width>101</width>
       <height>41</height>
@@ -54,7 +54,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>150</x>
       <y>170</y>
       <width>101</width>
       <height>41</height>
@@ -104,13 +104,47 @@ QPushButton:pressed {
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>170</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {    
+    min-height: 1.5em;    
+    font: 1em;   
+    margin: 0 1px 0 1px;   
+    color: white;    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #000000, stop: 1 #cccccc);
+    
+    border-style: outset;    
+    border-radius: 10px;
+    border-width: 2px;   
+    border-color: #000000;
+}
+ 
+
+QPushButton:pressed {    
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #cccccc, stop: 1 #000000);
+}</string>
+    </property>
+    <property name="text">
+     <string>High Scores</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>404</width>
      <height>26</height>
     </rect>
    </property>
