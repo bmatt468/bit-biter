@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gameform.ui'
 **
-** Created: Thu Mar 29 10:48:01 2012
+** Created: Fri Mar 30 21:12:24 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

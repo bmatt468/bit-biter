@@ -15,6 +15,8 @@
 #include <QFile>
 #include <QFontDatabase>
 #include <options.h>
+#include <QString>
+#include "gameform.h"
 
 namespace Ui {
     class MainWindow;
@@ -30,10 +32,16 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QString bodyColor;
+    QString foodColor;
+    QString deadColor;
 
 private slots:
     void on_pushButton_2_clicked();
     void on_pushButton_clicked();
+    void setBodyColor(QColor qc);
+    void setFoodColor(QColor qc);
+    void setDeadColor(QColor qc);
 
 };
 

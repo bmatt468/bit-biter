@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'options.h'
 **
-** Created: Fri Mar 30 11:58:45 2012
+** Created: Fri Mar 30 21:25:29 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_Options[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,12 +32,15 @@ static const uint qt_meta_data_Options[] = {
 
  // slots: signature, parameters, type, tag, flags
        9,    8,    8,    8, 0x08,
+      28,    8,    8,    8, 0x08,
+      46,    8,    8,    8, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Options[] = {
-    "Options\0\0on_body_clicked()\0"
+    "Options\0\0on_death_clicked()\0"
+    "on_food_clicked()\0on_body_clicked()\0"
 };
 
 const QMetaObject Options::staticMetaObject = {
@@ -69,10 +72,12 @@ int Options::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: on_body_clicked(); break;
+        case 0: on_death_clicked(); break;
+        case 1: on_food_clicked(); break;
+        case 2: on_body_clicked(); break;
         default: ;
         }
-        _id -= 1;
+        _id -= 3;
     }
     return _id;
 }

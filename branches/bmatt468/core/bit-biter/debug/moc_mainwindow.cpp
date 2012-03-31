@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Fri Mar 30 11:58:42 2012
+** Created: Fri Mar 30 21:25:26 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,13 +33,18 @@ static const uint qt_meta_data_MainWindow[] = {
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x08,
       38,   11,   11,   11, 0x08,
+      65,   62,   11,   11, 0x08,
+      86,   62,   11,   11, 0x08,
+     107,   62,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0on_pushButton_2_clicked()\0"
-    "on_pushButton_clicked()\0"
+    "on_pushButton_clicked()\0qc\0"
+    "setBodyColor(QColor)\0setFoodColor(QColor)\0"
+    "setDeadColor(QColor)\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -73,9 +78,12 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         switch (_id) {
         case 0: on_pushButton_2_clicked(); break;
         case 1: on_pushButton_clicked(); break;
+        case 2: setBodyColor((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 3: setFoodColor((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 4: setDeadColor((*reinterpret_cast< QColor(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 2;
+        _id -= 5;
     }
     return _id;
 }
