@@ -4,7 +4,7 @@
 
 #define INIT_SNAKE_LENGTH 5
 #define INIT_BOARD_SIZE 20
-#define TIMER_INTERVAL 150
+#define TIMER_INTERVAL 100
 
 GameBoard::GameBoard(QObject *parent, DifficultyLevel level) :
 	QObject(parent),
@@ -21,9 +21,9 @@ GameBoard::GameBoard(QObject *parent, DifficultyLevel level) :
 	generateFood();
 
 	// position snake in center of board
-	int headX = (width / 2) - (INIT_SNAKE_LENGTH / 2);
-	int headY = height / 2;
-	snake = new Snake(this, QPoint(headX, headY), INIT_SNAKE_LENGTH, Snake::LEFT);
+	int headY = (height / 2) - (INIT_SNAKE_LENGTH / 2);
+	int headX = width / 2;
+	snake = new Snake(this, QPoint(headX, headY), INIT_SNAKE_LENGTH, Snake::UP);
 }
 
 GameBoard::GameBoard(QObject *parent, QDataStream *saveData) :
