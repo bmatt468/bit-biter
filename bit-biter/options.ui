@@ -32,10 +32,10 @@
   <widget class="QPushButton" name="body">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>50</x>
      <y>20</y>
-     <width>111</width>
-     <height>31</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -45,10 +45,10 @@
   <widget class="QPushButton" name="food">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>50</x>
      <y>80</y>
-     <width>111</width>
-     <height>31</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -58,10 +58,10 @@
   <widget class="QPushButton" name="death">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>50</x>
      <y>140</y>
-     <width>111</width>
-     <height>31</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">

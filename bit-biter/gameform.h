@@ -32,7 +32,8 @@ class GameForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit GameForm(QWidget *parent = 0, QString snakeColor = "blue", QString foodColor = "green", QString deadColor = "red" );
+    explicit GameForm(QWidget *parent = 0);
+    GameForm(QWidget *parent, QString snakeColor, QString foodColor, QString deadColor = "red");
     ~GameForm();
     GameBoard *g;
     Snake *s;
