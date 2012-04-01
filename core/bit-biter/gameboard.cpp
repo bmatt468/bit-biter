@@ -6,7 +6,7 @@
 #define INIT_BOARD_SIZE 20
 #define TIMER_INTERVAL 150
 
-GameBoard::GameBoard(QObject *parent) :
+GameBoard::GameBoard(QObject *parent, DifficultyLevel level) :
 	QObject(parent),
 	score(0),
 	width(INIT_BOARD_SIZE),

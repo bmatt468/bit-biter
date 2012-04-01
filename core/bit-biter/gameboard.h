@@ -22,19 +22,24 @@ class GameBoard : public QObject
 {
     Q_OBJECT
 public:
+	enum DifficultyLevel {NONE, EASY, MEDIUM, HARD};
+
 	//--------------------------------------------------------------
-	// explicit GameBoard(QObject *parent = 0)
-	// Purpose: Constructs a new GameBoard object with dimensions of
-	// 50 x 50 tiles and a gameplay speed of one move every 1/2 second.
+	// explicit GameBoard(QObject *parent, DifficultyLevel level))
+	// Purpose: Constructs a new GameBoard object with the difficulty
+	// level specified by level. If no difficulty level is set, the
+	// gameboard size is unchanged throughout gameplay. Otherwise the
+	// gameboard shrinks at regular intervals with higher difficulty
+	// correponding to shorter intervals.
 	// Limitations: none
 	// Assumptions: none
 	// Return: a pointer to a new GameBoard object
 	//--------------------------------------------------------------
 
-	explicit GameBoard(QObject *parent = 0);
+	explicit GameBoard(QObject *parent = 0, DifficultyLevel level = NONE);
 
 	//--------------------------------------------------------------
-	// GameBoard(QObject *parent = 0, QDataStream *saveData)
+	// GameBoard(QObject *parent, QDataStream *saveData)
 	// Purpose: Constructs a gameboard from the data contained in the
 	// datastream saveData.
 	// Limitations: none
@@ -89,6 +94,18 @@ public:
 	int getScore();
 
 	//--------------------------------------------------------------
+	// int getCountDown()
+	// Purpose: Retrieves the amount of time remaining until gameplay
+	// ends. As the countdown runs down, the gameboard size shrinks at
+	// regulary intervals determined by the difficulty level.
+	// Limitations: none
+	// Assumptions: none
+	// Return: an integer representing the gameplay time remaining
+	//--------------------------------------------------------------
+
+	int getCountdown();
+
+	//--------------------------------------------------------------
 	// QPoint getFood()
 	// Purpose: retrieves a point describing the location
 	// of the next piece of food on the gameboard
@@ -101,6 +118,18 @@ public:
 	QPoint getFood();
 
 	//--------------------------------------------------------------
+	// QPoint getCountdownReload()
+	// Purpose: retrieves a point describing the location
+	// of the next countdown reload pill on the gameboard
+	// Limitations: none
+	// Assumptions: none
+	// Return: a QPoint representing the location of the next countdown
+	// reload pill in terms of the gameboard's coordinate system
+	//--------------------------------------------------------------
+
+	QPoint getCountdownReload();
+
+	//--------------------------------------------------------------
 	// Snake *getSnake()
 	// Purpose: retrieves the gameboard's snake object
 	// Limitations: none
@@ -109,6 +138,17 @@ public:
 	//------------------------------------------------------------
 
     Snake *getSnake();
+
+	//--------------------------------------------------------------
+	// DifficultyLevel getDifficultyLevel()
+	// Purpose: retrieves the gameboard's difficulty level
+	// Limitations: none
+	// Assumptions: none
+	// Return: a DifficultyLevel specifying the gameboard's difficulty
+	// level
+	//------------------------------------------------------------
+
+	DifficultyLevel getDifficultyLevel();
 
 	//--------------------------------------------------------------
 	// void start()
@@ -153,6 +193,17 @@ public:
 
 	void foodWasEaten();
 
+	//--------------------------------------------------------------
+	// void countdownReloadWasEaten()
+	// Purpose: Indicates to the gameboard that the countdown reload
+	// pill was eaten.
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void countdownReloadWasEaten();
+
 signals:
 
 	//--------------------------------------------------------------
@@ -169,11 +220,13 @@ signals:
 
 private:
     QTimer *timer;
-    int score;
+	int score, countdown;
 	int width, height;
 	QPoint food;
+	QPoint countdownReload;
     Snake *snake;
 	bool isGameOver;
+	DifficultyLevel level;
 
 	//--------------------------------------------------------------
 	// void generateFood()
@@ -185,6 +238,17 @@ private:
 	//--------------------------------------------------------------
 
 	void generateFood();
+
+	//--------------------------------------------------------------
+	// void generateCountdownReload()
+	// Purpose: Places a new countdown reload pill on the gameboard
+	// at a random location.
+	// Limitations: none
+	// Assumptions: none
+	// Return: nothing
+	//--------------------------------------------------------------
+
+	void generateCountdownReload();
 
 public slots:
 	//--------------------------------------------------------------
