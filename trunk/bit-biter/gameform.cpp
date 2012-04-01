@@ -1,5 +1,12 @@
 #include "gameform.h"
 
+GameForm::GameForm(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::GameForm)
+{
+    ui->setupUi(this);
+}
+
 GameForm::GameForm(QWidget *parent, QString snakeColor, QString foodColor, QString deadColor) :
     QWidget(parent),
     ui(new Ui::GameForm)
@@ -145,18 +152,48 @@ void GameForm::on_game_reset_clicked()
 
 void GameForm::setBodyColor(QString color)
 {
-    bodyGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 127, 255), stop:1 rgba(255, 255, 255, 255));"
-                                      "border-radius: 5px;");
+    if (color != "")
+    {
+        bodyGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 {BASECOLOR}, stop:1 rgba(255, 255, 255, 255));"
+                                            "border-radius: 5px;");
+        bodyGrad = bodyGrad.replace(QString("{BASECOLOR}"),color);
+    }
+
+    else
+    {
+        bodyGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 127, 255), stop:1 rgba(255, 255, 255, 255));"
+                                          "border-radius: 5px;");
+    }
 }
 
 void GameForm::setFoodColor(QString color)
 {
-    foodGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));"
-                                      "border-radius: 5px;");
+    if (color != "")
+    {
+        foodGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 {BASECOLOR}, stop:1 rgba(255, 255, 255, 255));"
+                                            "border-radius: 5px;");
+        foodGrad = foodGrad.replace(QString("{BASECOLOR}"),color);
+    }
+
+    else
+    {
+        foodGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 200, 0, 255), stop:1 rgba(255, 255, 255, 255));"
+                                          "border-radius: 5px;");
+    }
 }
 
 void GameForm::setDeadColor(QString color)
 {
-    deadGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(200, 0, 0, 255), stop:1 rgba(220, 220, 220, 255));"
+    if (color != "")
+    {
+        deadGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 {BASECOLOR}, stop:1 rgba(220, 220, 220, 255));"
                                       "border-radius: 5px;");
+        deadGrad = deadGrad.replace(QString("{BASECOLOR}"),color);
+    }
+
+    else
+    {
+        deadGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(200, 0, 0, 255), stop:1 rgba(220, 220, 220, 255));"
+                                      "border-radius: 5px;");
+    }
 }
