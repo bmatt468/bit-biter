@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gameform.ui'
 **
-** Created: Fri Mar 30 21:12:24 2012
+** Created: Mon Apr 2 07:30:00 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -33,7 +33,7 @@ public:
         if (GameForm->objectName().isEmpty())
             GameForm->setObjectName(QString::fromUtf8("GameForm"));
         GameForm->resize(399, 455);
-        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(GameForm->sizePolicy().hasHeightForWidth());
@@ -46,6 +46,10 @@ public:
         GameForm->setFont(font);
         GameForm->setCursor(QCursor(Qt::ArrowCursor));
         GameForm->setFocusPolicy(Qt::StrongFocus);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/fonts/fonts/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        GameForm->setWindowIcon(icon);
+        GameForm->setStyleSheet(QString::fromUtf8(""));
         game_reset = new QPushButton(GameForm);
         game_reset->setObjectName(QString::fromUtf8("game_reset"));
         game_reset->setGeometry(QRect(150, 400, 91, 41));

@@ -21,7 +21,12 @@
 #include <QLabel>
 #include <QKeyEvent>
 #include <string>
-
+#include <QMessageBox>
+#include <QGroupBox>
+#include "savegame.h"
+#include "ui_savegame.h"
+#include <QCloseEvent>
+#include <QDataStream>
 
 namespace Ui {
     class GameForm;
@@ -33,12 +38,12 @@ class GameForm : public QWidget
 
 public:
     explicit GameForm(QWidget *parent = 0);
-    GameForm(QWidget *parent, QString snakeColor, QString foodColor, QString deadColor = "red");
+    GameForm(QWidget *parent, QString snakeColor, QString foodColor, QString deadColor, bool isLoadedGame);
     ~GameForm();
     GameBoard *g;
     Snake *s;
     QList<QPoint> *snakesegs;
-    void keyPressEvent(QKeyEvent *event);
+    void keyPressEvent(QKeyEvent *event);    
 
 private:
     Ui::GameForm *ui;
@@ -53,13 +58,15 @@ private:
     void setBodyColor(QString color);
     void setFoodColor(QString color);
     void setDeadColor(QString color);
+    bool paused;
 
 signals:
-    void closed();
+    void closed();    
 
 private slots:
     void on_game_reset_clicked();
     void refreshBoard();
+    void saveResponse(bool ans);
 
 };
 
