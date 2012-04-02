@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Mar 30 19:23:03 2012
+** Created: Mon Apr 2 07:26:44 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -19,7 +19,6 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
-#include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 
@@ -33,15 +32,19 @@ public:
     QPushButton *pushButton_2;
     QLabel *label;
     QPushButton *pushButton_3;
+    QPushButton *mute_button;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(404, 301);
+        MainWindow->resize(391, 304);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/fonts/fonts/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
+        MainWindow->setLayoutDirection(Qt::LeftToRight);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
@@ -116,17 +119,18 @@ public:
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #cccccc, stop: 1 #000000);\n"
 "}"));
+        mute_button = new QPushButton(centralWidget);
+        mute_button->setObjectName(QString::fromUtf8("mute_button"));
+        mute_button->setGeometry(QRect(342, 220, 41, 41));
+        mute_button->setStyleSheet(QString::fromUtf8(""));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 404, 26));
+        menuBar->setGeometry(QRect(0, 0, 391, 26));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
 
@@ -135,11 +139,12 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Bit-Biter (beta)", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Bit-Biter", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "Start Game", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("MainWindow", "Options", 0, QApplication::UnicodeUTF8));
         label->setText(QString());
-        pushButton_3->setText(QApplication::translate("MainWindow", "High Scores", 0, QApplication::UnicodeUTF8));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Load Game", 0, QApplication::UnicodeUTF8));
+        mute_button->setText(QString());
     } // retranslateUi
 
 };

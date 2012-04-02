@@ -5,21 +5,48 @@ GameForm::GameForm(QWidget *parent) :
     ui(new Ui::GameForm)
 {
     ui->setupUi(this);
+    this->setFixedSize(399,455);
+    this->setFocus();
 }
 
-GameForm::GameForm(QWidget *parent, QString snakeColor, QString foodColor, QString deadColor) :
+GameForm::GameForm(QWidget *parent, QString snakeColor, QString foodColor, QString deadColor, bool isLoadedGame) :
     QWidget(parent),
     ui(new Ui::GameForm)
 {    
-    ui->setupUi(this);
-    g = new GameBoard();
-    this->setBodyColor(snakeColor);
-    this->setFoodColor(foodColor);
-    this->setDeadColor(deadColor);
-    connect(g, SIGNAL(needsUpdate()), this, SLOT(refreshBoard())); // update snake position
-    g->start();
-    l = new QLabel(this);
-    ui->game_reset->hide();
+    if (!isLoadedGame)
+    {
+        ui->setupUi(this);
+        g = new GameBoard();
+        this->setBodyColor(snakeColor);
+        this->setFoodColor(foodColor);
+        this->setDeadColor(deadColor);
+        connect(g, SIGNAL(needsUpdate()), this, SLOT(refreshBoard())); // update snake position
+        g->start();
+        l = new QLabel(this);
+        ui->game_reset->hide();
+    }
+
+    else
+    {
+        ui->setupUi(this);
+        QFile file("savegame.terror");
+        file.open(QIODevice::ReadOnly);
+        QDataStream load(&file);
+        load.setVersion(QDataStream::Qt_4_6);
+        g = new GameBoard(0,&load);
+        g->pause();
+        this->setBodyColor(snakeColor);
+        this->setFoodColor(foodColor);
+        this->setDeadColor(deadColor);
+        connect(g, SIGNAL(needsUpdate()), this, SLOT(refreshBoard())); // update snake position
+        l = new QLabel(this);
+        l->setStyleSheet("border-image: url(:/fonts/fonts/paused.png);");
+        l->setGeometry(10,10,300,50);
+        l->show();
+        paused = !paused;
+        ui->game_reset->hide();
+        file.close();
+    }
 }
 
 GameForm::~GameForm()
@@ -29,7 +56,15 @@ GameForm::~GameForm()
 
 void GameForm::closeEvent(QCloseEvent *event)
 {
-    emit(closed());
+    g->pause();
+    if (!g->checkIsGameOver())
+    {
+        event->ignore();
+        SaveGame *sg = new SaveGame();
+        connect(sg, SIGNAL(responseGiven(bool)), this, SLOT(saveResponse(bool)));
+        sg->show();
+    }
+    else emit(closed());
 }
 
 void GameForm::refreshBoard()
@@ -131,10 +166,22 @@ void GameForm::keyPressEvent(QKeyEvent *event)
 
     case (Qt::Key_P):
         {
-            g->pause();
-            l->setStyleSheet("border-image: url(:/fonts/fonts/paused.png);");
-            l->setGeometry(10,10,300,50);
-            l->show();
+            if (!paused)
+            {
+                g->pause();
+                l->setStyleSheet("border-image: url(:/fonts/fonts/paused.png);");
+                l->setGeometry(10,10,300,50);
+                l->show();
+                paused = !paused;
+            }
+
+            else
+            {
+                g->start();
+                l->hide();
+                paused = !paused;
+            }
+
             break;
         }
     }
@@ -196,4 +243,25 @@ void GameForm::setDeadColor(QString color)
         deadGrad = QString::fromStdString("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(200, 0, 0, 255), stop:1 rgba(220, 220, 220, 255));"
                                       "border-radius: 5px;");
     }
+}
+
+void GameForm::saveResponse(bool ans)
+{
+    if (ans)
+    {
+        QFile file("savegame.terror");
+        file.open(QIODevice::WriteOnly);
+        QDataStream save(&file);
+        save.setVersion(QDataStream::Qt_4_6);
+        g->SaveGame(&save);
+        file.close();
+        emit(closed());
+    }
+
+    if (!ans)
+    {
+        emit(closed());
+    }
+
+    this->deleteLater();
 }

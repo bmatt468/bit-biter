@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'options.ui'
 **
-** Created: Fri Mar 30 21:18:43 2012
+** Created: Sun Apr 1 17:49:57 2012
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -34,6 +34,9 @@ public:
         if (Options->objectName().isEmpty())
             Options->setObjectName(QString::fromUtf8("Options"));
         Options->resize(258, 285);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/fonts/fonts/icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Options->setWindowIcon(icon);
         buttonBox = new QDialogButtonBox(Options);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(-110, 240, 341, 32));

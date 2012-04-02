@@ -41,11 +41,6 @@ GameBoard::GameBoard(QObject *parent, QDataStream *saveData) :
 	*saveData >> food;
 	*saveData >> isGameOver;
 	snake = new Snake(this, saveData);
-
-	// position snake in center of board
-	int headX = (width / 2) - (INIT_SNAKE_LENGTH / 2);
-	int headY = height / 2;
-	snake = new Snake(this, QPoint(headX, headY), INIT_SNAKE_LENGTH, Snake::LEFT);
 }
 
 GameBoard::~GameBoard(){

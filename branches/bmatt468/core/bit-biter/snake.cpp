@@ -44,13 +44,13 @@ Snake::Snake(GameBoard *board, QDataStream *saveData) :
 
 {
 	bodySegments = new QList<QPoint>();
-	int length, directionNum;
-	*saveData >> length;
-	for (int i = 0; i < length; i++){
-		QPoint bodySegment;
-		*saveData >> bodySegment;
-		bodySegments->push_back(bodySegment);
-	}
+        int length, directionNum;
+        *saveData >> length;
+        for (int i = 0; i < length; i++){
+                QPoint bodySegment;
+                *saveData >> bodySegment;
+                bodySegments->push_back(bodySegment);
+        }
 	*saveData >> isDead;
 	*saveData >> directionNum;
 	direction = (Direction)directionNum;
@@ -61,10 +61,10 @@ Snake::~Snake(){
 }
 
 void Snake::save(QDataStream *saveData){
-	*saveData << bodySegments->length();
-	for (int i = 0; i < bodySegments->length(); i++){
-		*saveData << bodySegments[i];
-	}
+        *saveData << bodySegments->length();
+        for (int i = 0; i < bodySegments->length(); i++){
+                *saveData << bodySegments->value(i);
+        }
 	*saveData << isDead;
 	*saveData << direction;
 }

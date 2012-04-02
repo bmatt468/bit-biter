@@ -4,5 +4,9 @@
         <file>fonts/bit-biter.png</file>
         <file>fonts/paused.png</file>
         <file>fonts/gameover.png</file>
+        <file>fonts/background.png</file>
+        <file>fonts/icon.png</file>
+        <file>fonts/Sound-off-icon.png</file>
+        <file>fonts/Sound-on-icon.png</file>
     </qresource>
 </RCC>

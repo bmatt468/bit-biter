@@ -17,6 +17,7 @@
 #include <options.h>
 #include <QString>
 #include "gameform.h"
+#include <QSound>
 
 namespace Ui {
     class MainWindow;
@@ -29,14 +30,19 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void closeEvent(QCloseEvent *);
 
 private:
     Ui::MainWindow *ui;
     QString bodyColor;
     QString foodColor;
     QString deadColor;
+    QSound *title;
+    bool muted;
 
 private slots:
+    void on_pushButton_3_clicked();
+    void on_mute_button_clicked();
     void on_pushButton_2_clicked();
     void on_pushButton_clicked();
     void setBodyColor(QColor qc);
@@ -46,3 +52,5 @@ private slots:
 };
 
 #endif // MAINWINDOW_H
+
+

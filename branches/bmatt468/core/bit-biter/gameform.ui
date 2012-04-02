@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -32,6 +32,13 @@
   </property>
   <property name="windowTitle">
    <string>Bit-Biter</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="fonts.qrc">
+    <normaloff>:/fonts/fonts/icon.png</normaloff>:/fonts/fonts/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QPushButton" name="game_reset">
    <property name="geometry">
@@ -95,6 +102,8 @@ QPushButton:pressed {
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="fonts.qrc"/>
+ </resources>
  <connections/>
 </ui>

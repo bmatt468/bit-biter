@@ -6,12 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>404</width>
-    <height>301</height>
+    <width>391</width>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bit-Biter (beta)</string>
+   <string>Bit-Biter</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="fonts.qrc">
+    <normaloff>:/fonts/fonts/icon.png</normaloff>:/fonts/fonts/icon.png</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -135,7 +142,23 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>High Scores</string>
+     <string>Load Game</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="mute_button">
+    <property name="geometry">
+     <rect>
+      <x>342</x>
+      <y>220</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -144,7 +167,7 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>404</width>
+     <width>391</width>
      <height>26</height>
     </rect>
    </property>
@@ -157,9 +180,10 @@ QPushButton:pressed {
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="fonts.qrc"/>
+ </resources>
  <connections/>
 </ui>

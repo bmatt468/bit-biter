@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Game Options</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="fonts.qrc">
+    <normaloff>:/fonts/fonts/icon.png</normaloff>:/fonts/fonts/icon.png</iconset>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
@@ -69,7 +73,9 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="fonts.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

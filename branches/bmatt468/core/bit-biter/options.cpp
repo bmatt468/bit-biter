@@ -6,6 +6,7 @@ Options::Options(QWidget *parent) :
     ui(new Ui::Options)
 {
     ui->setupUi(this);
+    this->setFixedSize(258,285);
     this->setParent(parent);
 }
 
